@@ -5,5 +5,8 @@
   "counter": {
     "increment": "Zuwachs",
     "decrement": "Dekrementieren"
+  },
+  "expression": {
+    "definition": "Definition"
   }
 }

@@ -14,7 +14,8 @@ const Expression = async ({ params: { lang } }: ExpressionProps) => {
   return (
     <div>
       <h1>
-        Expression: {expression.data.attributes.name} - {lang} -{' '}
+        {dictionary.expression.definition} - {expression.data.attributes.name} -{' '}
+        {lang} -{' '}
         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
         {dictionary['server-component'].welcome}
       </h1>
