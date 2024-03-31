@@ -2,25 +2,22 @@ import { getExpressionById } from '@/services/expressions/get-expression-by-id';
 import type { Locale } from '@/i18n-config';
 import { getDictionary } from '@/get-dictionary';
 
-interface ExpressionProps {
+interface ExpressionPageProps {
   params: { lang: Locale };
 }
 
-const Expression = async ({ params: { lang } }: ExpressionProps) => {
+const ExpressionPage = async ({ params: { lang } }: ExpressionPageProps) => {
   const expression = await getExpressionById('1');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const dictionary = await getDictionary(lang);
+  const t = await getDictionary(lang);
 
   return (
     <div>
       <h1>
-        {dictionary.expression.definition} - {expression.data.attributes.name} -{' '}
-        {lang} -{' '}
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
-        {dictionary['server-component'].welcome}
+        {t.expression.definition} - {expression.name} - {lang}
       </h1>
     </div>
   );
 };
 
-export default Expression;
+export default ExpressionPage;

@@ -4,7 +4,6 @@ import type { Locale } from './i18n-config';
 
 const dictionaries = {
   en: () => import('./dictionaries/en.json'),
-  de: () => import('./dictionaries/de.json'),
   'pt-BR': () => import('./dictionaries/pt-BR.json'),
 };
 

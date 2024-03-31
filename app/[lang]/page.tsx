@@ -12,7 +12,7 @@ const Home = async () => {
   return (
     <div>
       <h1>Home</h1>
-      {expressions.data.map((expression) => (
+      {expressions.map((expression) => (
         <a href={`/expression/${expression.id}`} key={expression.id}>
           {expression.attributes.name}
         </a>

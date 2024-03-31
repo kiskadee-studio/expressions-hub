@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import type { ReactNode } from 'react';
 import type { Locale } from '@/i18n-config';
+import { Header } from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,10 +18,13 @@ interface RootLayoutProps {
   params: { lang: Locale };
 }
 
-const RootLayout = ({ children, params: { lang } }: RootLayoutProps) => (
-  <html lang={lang}>
-    <body className={inter.className}>{children}</body>
-  </html>
-);
-
-export default RootLayout;
+export default function ({ children, params: { lang } }: RootLayoutProps) {
+  return (
+    <html lang={lang}>
+      <body className={inter.className}>
+        <Header lang={lang} />
+        {children}
+      </body>
+    </html>
+  );
+}

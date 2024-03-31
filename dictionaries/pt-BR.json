@@ -8,5 +8,9 @@
   },
   "expression": {
     "definition": "Significado"
+  },
+  "language": {
+    "en": "Inglês",
+    "pt-BR": "Português"
   }
 }
