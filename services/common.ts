@@ -6,7 +6,6 @@ myHeaders.append('Authorization', `Bearer ${process.env.API_TOKEN!}`);
 const requestOptions: RequestInit = {
   method: 'GET',
   headers: myHeaders,
-  redirect: 'follow',
 };
 
 export { HOST, requestOptions };

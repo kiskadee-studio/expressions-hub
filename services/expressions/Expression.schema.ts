@@ -3,12 +3,12 @@ import { MetaSchema } from '@/services/common.schema';
 
 const ExpressionAttributesSchema = z.object({
   createdAt: z.string(),
-  Language: z.string(),
   publishedAt: z.string(),
-  meaning: z.string(),
-  origin: z.string(),
-  name: z.string(),
   updatedAt: z.string(),
+  synonyms: z.string(),
+  language: z.string(),
+  slug: z.string(),
+  name: z.string(),
 });
 
 const ExpressionSchema = z

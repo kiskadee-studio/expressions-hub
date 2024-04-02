@@ -1,13 +1,15 @@
-import { getExpressionById } from '@/services/expressions/get-expression-by-id';
+import { getExpressionBySlug } from '@/services/expressions/get-expression-by-slug';
 import type { Locale } from '@/i18n-config';
 import { getDictionary } from '@/get-dictionary';
 
 interface ExpressionPageProps {
-  params: { lang: Locale };
+  params: { lang: Locale; slug: string };
 }
 
-const ExpressionPage = async ({ params: { lang } }: ExpressionPageProps) => {
-  const expression = await getExpressionById('1');
+const ExpressionPage = async ({
+  params: { lang, slug },
+}: ExpressionPageProps) => {
+  const expression = await getExpressionBySlug(slug);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const t = await getDictionary(lang);
 
