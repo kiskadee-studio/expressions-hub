@@ -13,7 +13,7 @@ const getExpressionBySlug = async (slug: string) => {
 
   const data = (await response.json()) as AllExpressions;
 
-  return AllExpressionsSchema.parse(data)[0]?.attributes;
+  return AllExpressionsSchema.parse(data)[0];
 };
 
 export { getExpressionBySlug };

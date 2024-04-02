@@ -10,7 +10,6 @@ const ExpressionPage = async ({
   params: { lang, slug },
 }: ExpressionPageProps) => {
   const expression = await getExpressionBySlug(slug);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const t = await getDictionary(lang);
 
   return (

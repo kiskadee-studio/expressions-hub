@@ -33,7 +33,12 @@ const AllExpressionsSchema = z
     ),
     meta: MetaSchema,
   })
-  .transform((data) => data.data);
+  .transform(({ data }) =>
+    data.map(({ id, attributes }) => ({
+      id,
+      ...attributes,
+    })),
+  );
 
 type AllExpressions = z.infer<typeof AllExpressionsSchema>;
 

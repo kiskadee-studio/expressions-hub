@@ -18,11 +18,8 @@ const Home = async ({ params: { lang } }: HomePageProps) => {
     <div>
       <h1>Home</h1>
       {expressions.map((expression) => (
-        <a
-          href={`${lang}/expression/${expression.attributes.slug}`}
-          key={expression.id}
-        >
-          {expression.attributes.name}
+        <a href={`${lang}/expression/${expression.slug}`} key={expression.id}>
+          {expression.name}
         </a>
       ))}
     </div>
